@@ -1,0 +1,9 @@
+{
+    "hik_url": "http://192.168.10.1",
+    "hik_usr": "admin",
+    "hik_pwd": "password",
+    "api_id": "10404010",
+    "api_hash":"",
+    "phone":"+27803008020",
+    "destinations":["me", "+27803008020", "+27803008021"]
+  }
