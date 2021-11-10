@@ -33,13 +33,8 @@ def telegram_send(destination, message):
   entity=client.get_entity(destination)
   client.send_message(entity, message, parse_mode='html')
   response = cam_image(402)
-  with open('screen.jpg', 'wb') as f:
-    for chunk in response.iter_content(chunk_size=1024):
-        if chunk:
-            f.write(chunk)
-  client.send_file(entity, r"C:\Users\alber\python\screen.jpg", caption="It's me!")
+  client.send_file(entity, response.content, caption="CAM-4")
   
-
 def telegram_multi_send(destinations, message):
   for i in range(len(destinations)):
     telegram_send(destinations[i], message)
