@@ -3,15 +3,19 @@ import datetime
 from hikvisionapi import Client
 from telethon import TelegramClient, events, sync
 
-hik_url = 'http://192.168.10.1'
-hik_usr = 'admin'
-hik_pwd = 'password'
+with open("config.json", "r") as jsonfile:
+    data = json.load(jsonfile)
+print()
 
-api_id = 10404010
-api_hash = ''
-phone = '+27803008020'
+hik_url = data['hik_url']
+hik_usr = data['hik_usr']
+hik_pwd = data['hik_pwd']
 
-destinations = ['me','+27070290000']
+api_id = data['api_id']
+api_hash = data['api_hash']
+phone = data['phone']
+
+destinations = data['destinations']
 
 client = TelegramClient(phone, api_id, api_hash)
 client.start()
